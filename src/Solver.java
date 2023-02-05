@@ -69,9 +69,13 @@ public class Solver {
         //Backtracking algorithm
         for (int row = 0; row < SIZE; row++){
             for(int column = 0; column < SIZE; column++){
+                //Check if current location is empty
                 if(board[row][column] == 0){
+                    //If empty try out numbers
                     for(int numberToTry = 1; numberToTry <= SIZE; numberToTry++){
+                        //If it is a valid placement
                         if(validNumber(board,numberToTry, row, column)){
+                            //If it's valid put the number in
                             board[row][column] = numberToTry;
 
                             if(solver(board)){
